@@ -11,7 +11,7 @@ module Formbuilder
       def content
         page_list if @form.multi_page?
 
-        form_tag @action, method: @method, class: 'formbuilder-form', multipart: true do
+        form action: @action, method: @method, class: 'formbuilder-form', enctype: 'multipart/form-data' do
           input type: 'hidden', name: 'page', value: @current_page
           render_fields
           actions
